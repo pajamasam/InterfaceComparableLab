@@ -83,6 +83,7 @@ Note: You may use the String/Long compareTo methods in your code
 1. Create a `PaymentPresenterTest`
 2. Create a test case to test the `toString` method of the PaymentPresenter class
   - When there is no payment
+    
     ```
       Payment[] payments = new Payment[0];
       PaymentPresenter presenter = new PaymentPresenter();
@@ -92,7 +93,9 @@ Note: You may use the String/Long compareTo methods in your code
 
       assertEquals(expected, actual);
     ```
+    
   - When there are multiple payments, you need to sort it first, then build the string using the short description
+    
   ```
     Payment[] payments = new Payment[2];
     Payment paypal = new PayPayl(4L, "Tia Mowry", "tia@mowry.com");
@@ -106,8 +109,10 @@ Note: You may use the String/Long compareTo methods in your code
     String actual = presenter.toString(payments);
     assertEquals(expected, actual);
   ```
+    
   3. Create a test case to test the `toStringByPayerName` method of the PaymentPresenter class
     - When there are multiple payments, you need to sort by calling the `PaymentSortByPayer` class to sort, then build the string using the short description
+
     ```
       Payment[] payments = new Payment[2];
       Payment paypal = new PayPayl(4L, "Tamara Mowry", "tamara@mowry.com");
@@ -121,8 +126,10 @@ Note: You may use the String/Long compareTo methods in your code
       String actual = presenter.toString(payments);
       assertEquals(expected, actual);
     ```
+    
   4. Create a test case to test the `toStringById` method of the PaymentPresenter class
     - When there are multiple payments, you need to sort by creating a lambda to sort the payment by id, then build the string using the short description
+
     ```
       Payment[] payments = new Payment[2];
       Payment paypal = new PayPayl(120L, "Tamara Mowry", "tamara@mowry.com");
