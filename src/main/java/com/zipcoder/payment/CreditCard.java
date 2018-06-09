@@ -10,9 +10,7 @@ public class CreditCard implements Payment {
     private int expiredMonth;
     private int expiredYear;
 
-    public CreditCard() {
-
-    }
+    public CreditCard() { }
 
     public CreditCard(int id, long number, String payerName, int expiredMonth, int expiredYear ) {
         this.id = id;
@@ -20,11 +18,6 @@ public class CreditCard implements Payment {
         this.payerName = payerName;
         this.expiredMonth = expiredMonth;
         this.expiredYear = expiredYear;
-    }
-
-    public static void main(String[] args){
-       // this(12,"Nicholas Maidanos", 4, 11);
-
     }
 
     public void setId(long id){
@@ -78,7 +71,7 @@ public class CreditCard implements Payment {
         return sb.toString();
     }
 
-    private int lastFourDigits(){
+    public int lastFourDigits(){
         //String numToString = new StringBuilder(Long.toString(this.number)).reverse().toString();
         char[] numToChar = Long.toString(this.number).toCharArray();
         String lastFourString = "";

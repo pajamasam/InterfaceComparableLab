@@ -8,7 +8,22 @@ import org.junit.Test;
 public class CreditCardTest {
 
     @Test
-    public void getAndSetIdTest(){
+    public void getIdTest(){
+        //When
+        CreditCard cc = new CreditCard();
+        cc.setId(100);
+
+        //Expect
+        long expected = 100;
+
+        //Actual
+        long actual =  cc.getId();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void setIdTest(){
         //When
         CreditCard cc = new CreditCard();
         cc.setId(100);
@@ -23,9 +38,8 @@ public class CreditCardTest {
     }
 
 
-
     @Test
-    public void getAndSetPayerNameTest(){
+    public void getNameTest(){
         //When
         CreditCard cc = new CreditCard();
         cc.setPayerName("Nicholas Maidanos");
@@ -40,7 +54,7 @@ public class CreditCardTest {
     }
 
     @Test
-    public void getAndSetNum(){
+    public void SetNumTest(){
         //When
         CreditCard cc = new CreditCard();
         cc.setNumber(411111111);
@@ -55,7 +69,7 @@ public class CreditCardTest {
     }
 
     @Test
-    public void getAndSetExMonth(){
+    public void getMonthTest(){
         //When
         CreditCard cc = new CreditCard();
         cc.setExpiredMonth(12);
@@ -70,7 +84,37 @@ public class CreditCardTest {
     }
 
     @Test
-    public void getAndSetExYear(){
+    public void setMonthTest(){
+        //When
+        CreditCard cc = new CreditCard();
+        cc.setExpiredMonth(12);
+
+        //Expect
+        int expected = 12;
+
+        //Actual
+        int actual =  cc.getExpiredMonth();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void setYearTest(){
+        //When
+        CreditCard cc = new CreditCard();
+        cc.setExpiredYear(1989);
+
+        //Expect
+        int expected = 1989;
+
+        //Actual
+        int actual =  cc.getExpiredYear();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getYearTest(){
         //When
         CreditCard cc = new CreditCard();
         cc.setExpiredYear(1989);
@@ -90,25 +134,24 @@ public class CreditCardTest {
         CreditCard cc = new CreditCard(12, 4111131,"Nicholas Maidanos", 4, 11);
 
         //Expect
-        String expected = "";
+        String expected = "CC Nicholas Maidanos 1131 4/11";
 
         //Actual
         String actual = cc.getShortDescription();
         assertEquals(expected, actual);
     }
 
-//    @Test
-//    public void getAndSetPayerShortDescriptionTest(){
-//        //When
-//        CreditCard cc = new CreditCard();
-//        cc.setShortDescription("This is a Credit Card");
-//
-//
-//
-//        //Actual
-//        String actual =  cc.getShortDescription();
-//
-//        assertEquals(expected, actual);
-//    }
+    @Test
+    public void testGetLastFourDigits(){
+        //Given
+        CreditCard cc = new CreditCard();
+        cc.setNumber(888999);
+        Integer expected = 8999;
+
+        //When
+        Integer actual = cc.lastFourDigits();
+        assertEquals(expected, actual);
+
+    }
 
 }
