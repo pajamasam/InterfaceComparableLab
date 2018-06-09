@@ -141,4 +141,8 @@ class CheckTest {
         String actual = ck.getShortDescription();
         assertEquals(expected, actual);
     }
+
+    @Test
+    void compareTo() {
+    }
 }

@@ -104,4 +104,8 @@ class PaypalTest {
 
         assertEquals(expect,actual);
     }
+
+    @Test
+    void compareTo() {
+    }
 }

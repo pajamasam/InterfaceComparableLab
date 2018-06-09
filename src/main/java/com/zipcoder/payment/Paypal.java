@@ -47,5 +47,7 @@ public class Paypal implements Payment {
         return sb.toString();
     }
 
-
+    public int compareTo(Payment o) {
+        return 0;
+    }
 }

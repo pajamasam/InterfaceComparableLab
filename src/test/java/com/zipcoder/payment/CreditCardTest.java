@@ -154,4 +154,19 @@ public class CreditCardTest {
 
     }
 
+    @Test
+    public void compareToTest() {
+        //Given
+        Payment cc = new CreditCard(12, 4111131,"Nicholas Maidanos", 4, 11);
+        Payment pp = new Paypal(23, "Nicholas Maidanos", "nmaidanos@gmail.com");
+
+        //Expect
+        int expected = -1;
+
+        //Actual
+        int actual = cc.compareTo(pp);
+
+        assertEquals(expected, actual);
+
+    }
 }

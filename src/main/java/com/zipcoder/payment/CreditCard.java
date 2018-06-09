@@ -81,5 +81,17 @@ public class CreditCard implements Payment {
         return Integer.parseInt(lastFourString);
     }
 
+    public int compareTo(Payment o) {
 
+        int result = this.getShortDescription().compareTo(o.getShortDescription());
+
+        if(result > 0){
+            return 1;
+        } else if(result < 0){
+            return -1;
+        } else {
+            return 0;
+        }
+
+    }
 }

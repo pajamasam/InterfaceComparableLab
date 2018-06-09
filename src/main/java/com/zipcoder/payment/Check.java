@@ -62,8 +62,12 @@ public class Check implements Payment {
     public void setId(long id) {
         this.id = id;
     }
+
     public String getAccountNumber(){
         return this.accountNumber;
     }
 
+    public int compareTo(Payment o) {
+        return 0;
+    }
 }
