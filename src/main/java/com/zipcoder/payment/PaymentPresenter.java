@@ -1,10 +1,10 @@
-package com.zipcoder;
+package com.zipcoder.payment;
 
 import com.zipcoder.payment.Payment;
-import com.zipcoder.payment.Comparators.Id;
-import com.zipcoder.payment.Comparators.Payer;
-import com.zipcoder.payment.Comparators.PaymentOrder;
-import com.zipcoder.payment.Comparators.ShortDescription;
+import com.zipcoder.Comparators.Id;
+import com.zipcoder.Comparators.Payer;
+import com.zipcoder.Comparators.PaymentOrder;
+import com.zipcoder.Comparators.ShortDescription;
 
 import java.util.Comparator;
 

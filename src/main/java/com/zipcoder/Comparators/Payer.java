@@ -1,4 +1,4 @@
-package com.zipcoder.payment.Comparators;
+package com.zipcoder.Comparators;
 
 import com.zipcoder.payment.Payment;
 

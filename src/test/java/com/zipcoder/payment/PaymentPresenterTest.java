@@ -1,7 +1,6 @@
 package com.zipcoder.payment;
 
-import com.zipcoder.PaymentPresenter;
-import com.zipcoder.payment.Comparators.PaymentOrder;
+import com.zipcoder.Comparators.PaymentOrder;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
