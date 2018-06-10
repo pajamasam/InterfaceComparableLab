@@ -1,15 +1,16 @@
 package com.zipcoder.payment;
 
+import com.zipcoder.paymentSort.ByPayer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PaymentSortByPayerTest {
+class PaymentOrderByPayerTest {
 
     @Test
     void compairTest1() {
         //When
-        PaymentSortByPayer ps = new PaymentSortByPayer();
+        ByPayer ps = new ByPayer();
         Payment cc = new CreditCard(12, 4111131,"Jimmy Maidanos", 4, 11);
         Payment pp = new Paypal(23, "Nicholas Maidanos", "nmaidanos@gmail.com");
 
@@ -25,7 +26,7 @@ class PaymentSortByPayerTest {
     @Test
     void compairTest2() {
         //When
-        PaymentSortByPayer ps = new PaymentSortByPayer();
+        ByPayer ps = new ByPayer();
         Payment cc = new CreditCard(12, 4111131,"Zimmy Maidanos", 4, 11);
         Payment pp = new Paypal(23, "Nicholas Maidanos", "nmaidanos@gmail.com");
 
@@ -41,7 +42,7 @@ class PaymentSortByPayerTest {
     @Test
     void compairTest3() {
         //When
-        PaymentSortByPayer ps = new PaymentSortByPayer();
+        ByPayer ps = new ByPayer();
         Payment cc = new CreditCard(12, 4111131,"Nicholas Maidanos", 4, 11);
         Payment pp = new Paypal(23, "Nicholas Maidanos", "nmaidanos@gmail.com");
 

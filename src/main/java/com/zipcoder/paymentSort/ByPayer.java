@@ -1,8 +1,10 @@
-package com.zipcoder.payment;
+package com.zipcoder.paymentSort;
+
+import com.zipcoder.payment.Payment;
 
 import java.util.Comparator;
 
-public class PaymentSortByPayer implements Comparator<Payment> {
+public class ByPayer implements Comparator<Payment> {
 
     public int compare(Payment o1, Payment o2) {
         if(o1.getPayerName().compareTo(o2.getPayerName()) > 0){
@@ -13,4 +15,5 @@ public class PaymentSortByPayer implements Comparator<Payment> {
             return 0;
         }
     }
+
 }
