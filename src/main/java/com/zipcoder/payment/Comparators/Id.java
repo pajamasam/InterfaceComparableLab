@@ -1,10 +1,10 @@
-package com.zipcoder.paymentSort;
+package com.zipcoder.payment.Comparators;
 
 import com.zipcoder.payment.Payment;
 
 import java.util.Comparator;
 
-public class ById implements Comparator<Payment> {
+public class Id implements Comparator<Payment> {
 
     public int compare(Payment o1, Payment o2) {
         String id1 = Long.toString(o1.getId());

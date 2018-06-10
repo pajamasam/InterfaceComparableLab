@@ -1,10 +1,10 @@
-package com.zipcoder.paymentSort;
+package com.zipcoder.payment.Comparators;
 
 import com.zipcoder.payment.Payment;
 
 import java.util.Comparator;
 
-public class ByShortDescription implements Comparator<Payment> {
+public class ShortDescription implements Comparator<Payment> {
 
     public int compare(Payment o1, Payment o2) {
         String str1 = o1.getShortDescription();

@@ -1,9 +1,9 @@
 package com.zipcoder.payment;
 
-import com.zipcoder.paymentSort.PaymentOrder;
-import org.junit.Test;
-
+import com.zipcoder.PaymentPresenter;
+import com.zipcoder.payment.Comparators.PaymentOrder;
 import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class PaymentPresenterTest {
 
@@ -37,7 +37,7 @@ public class PaymentPresenterTest {
         payments[1] = cc;
         payments[2] = ck;
         //Expect
-        String expected = "CC Nicholas Maidanos 1131 4/11\nCheck Nicholas Maidanos ****3234\nPayPal Nicholas Maidanos nmaidanos@gmail.com\n";
+        String expected = "CC Nicholas Maidanos 1131 4/11\nCheck Nicholas Maidanos ****3234\nPaypal Nicholas Maidanos nmaidanos@gmail.com\n";
 
         //Actual
         String actual = paymentPresenter.toString(payments);
@@ -60,7 +60,7 @@ public class PaymentPresenterTest {
         payments[1] = cc;
         payments[2] = ck;
         //Expect
-        String expected = "Check Nicholas Maidanos ****3234\nPayPal Nicholas Maidanos nmaidanos@gmail.com\nCC Nicholas Maidanos 1131 4/11\n";
+        String expected = "Check Nicholas Maidanos ****3234\nPaypal Nicholas Maidanos nmaidanos@gmail.com\nCC Nicholas Maidanos 1131 4/11\n";
 
         //Actual
         String actual = paymentPresenter.toString(payments);
@@ -82,7 +82,7 @@ public class PaymentPresenterTest {
         payments[1] = ck;
         payments[2] = pp;
         //Expect
-        String expected = "PayPal Billy Maidanos nmaidanos@gmail.com\nCC Jimmy Maidanos 1131 4/11\nCheck Nicholas Maidanos ****3234\n";
+        String expected = "Paypal Billy Maidanos nmaidanos@gmail.com\nCC Jimmy Maidanos 1131 4/11\nCheck Nicholas Maidanos ****3234\n";
 
         //Actual
         String actual = paymentPresenter.toString(payments);

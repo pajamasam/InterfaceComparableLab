@@ -1,9 +1,10 @@
-package com.zipcoder.payment;
+package com.zipcoder;
 
-import com.zipcoder.paymentSort.ById;
-import com.zipcoder.paymentSort.ByPayer;
-import com.zipcoder.paymentSort.PaymentOrder;
-import com.zipcoder.paymentSort.ByShortDescription;
+import com.zipcoder.payment.Payment;
+import com.zipcoder.payment.Comparators.Id;
+import com.zipcoder.payment.Comparators.Payer;
+import com.zipcoder.payment.Comparators.PaymentOrder;
+import com.zipcoder.payment.Comparators.ShortDescription;
 
 import java.util.Comparator;
 
@@ -22,7 +23,6 @@ public class PaymentPresenter {
 
         for(int i = 0; i < payments.length; i++){
             sb.append(payments[i].getShortDescription());
-            sb.append("\n");
         }
 
         return sb.toString();
@@ -35,13 +35,13 @@ public class PaymentPresenter {
     public void orderBy(Payment[] payments){
         switch(this.order){
             case SHORTDESCRIPTION:
-                this.bubbleSort(payments, new ByShortDescription());
+                this.bubbleSort(payments, new ShortDescription());
                 break;
             case PAYERNAME:
-                this.bubbleSort(payments, new ByPayer());
+                this.bubbleSort(payments, new Payer());
                 break;
             case ID:
-                this.bubbleSort(payments, new ById());
+                this.bubbleSort(payments, new Id());
                 break;
             default:
                 break;

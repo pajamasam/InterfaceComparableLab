@@ -44,6 +44,16 @@ public class Paypal implements Payment {
     }
 
     public int compareTo(Payment o) {
-        return 0;
+
+        int result = this.getShortDescription().compareTo(o.getShortDescription());
+
+        if(result > 0){
+            return 1;
+        } else if(result < 0){
+            return -1;
+        } else {
+            return 0;
+        }
+
     }
 }
