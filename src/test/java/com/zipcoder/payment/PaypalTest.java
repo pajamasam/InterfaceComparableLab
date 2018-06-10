@@ -1,11 +1,10 @@
 package com.zipcoder.payment;
 
-import org.junit.jupiter.api.Test;
 
+import static org.junit.Assert.*;
+import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-
-class PaypalTest {
+public class PaypalTest {
 
     @Test
     void setId() {
@@ -94,10 +93,10 @@ class PaypalTest {
     @Test
     void getShortDescription() {
         //When
-        Paypal pp = new Paypal(78, "Nicholas Madianos", "nmaidanos@gmail.com");
+        Paypal pp = new Paypal(78, "Nicholas Maidanos", "nmaidanos@gmail.com");
 
         //Expect
-        String expect = "PayPal Nicholas Madianos nmaidanos@gmail.com";
+        String expect = "PayPal Nicholas Maidanos nmaidanos@gmail.com";
 
         //Actual
         String actual = pp.getShortDescription();

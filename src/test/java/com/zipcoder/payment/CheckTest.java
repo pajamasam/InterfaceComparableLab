@@ -1,15 +1,12 @@
 package com.zipcoder.payment;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
-
-class CheckTest {
+public class CheckTest {
 
     @Test
-    void getId() {
+    public void getId() {
         //When
         Check ck = new Check();
         ck.setId(4456);
@@ -24,7 +21,7 @@ class CheckTest {
     }
 
     @Test
-    void getPayerName() {
+    public void getPayerName() {
         //When
         Check ck = new Check();
         ck.setPayerName("Nicholas");
@@ -38,12 +35,12 @@ class CheckTest {
     }
 
     @Test
-    void getShortDescription() {
+    public void getShortDescription() {
     }
 
 
     @Test
-    void getRoutingNumber() {
+    public void getRoutingNumber() {
         //When
         Check ck = new Check();
         ck.setRoutingNumber("4532353");
@@ -58,7 +55,7 @@ class CheckTest {
     }
 
     @Test
-    void setRoutingNumber() {
+    public void setRoutingNumber() {
         //When
         Check ck = new Check();
         ck.setRoutingNumber("4532353");
@@ -72,7 +69,7 @@ class CheckTest {
     }
 
     @Test
-    void setAccountNumber() {
+    public void setAccountNumber() {
         //When
         Check ck = new Check();
         ck.setAccountNumber("4532353");
@@ -86,7 +83,7 @@ class CheckTest {
     }
 
     @Test
-    void setPayerName() {
+    public void setPayerName() {
         //When
         Check ck = new Check();
         ck.setPayerName("Nick M");
@@ -100,7 +97,7 @@ class CheckTest {
     }
 
     @Test
-    void setId() {
+    public void setId() {
         //When
         Check ck = new Check();
         ck.setId(3423);
@@ -115,7 +112,7 @@ class CheckTest {
     }
 
     @Test
-    void getAccountNumber() {
+    public void getAccountNumber() {
         //When
         Check ck = new Check();
         ck.setAccountNumber("893456");
@@ -130,7 +127,7 @@ class CheckTest {
     }
 
     @Test
-    void getShortDescription1() {
+    public void getShortDescription1() {
         //When
         Check ck = new Check(4563, "Nicholas Maidanos", "45335665", "444545");
 
@@ -143,6 +140,6 @@ class CheckTest {
     }
 
     @Test
-    void compareTo() {
+    public void compareTo() {
     }
 }

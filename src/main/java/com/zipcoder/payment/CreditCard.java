@@ -61,14 +61,7 @@ public class CreditCard implements Payment {
     }
 
     public String getShortDescription() {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("CC ");
-        sb.append(this.payerName + " ");
-        sb.append(lastFourDigits() + " ");
-        sb.append(this.expiredMonth + "/" + this.expiredYear);
-
-        return sb.toString();
+        return String.format("CC %s %d %d/%d", this.payerName, this.lastFourDigits(), this.expiredMonth, this.expiredYear);
     }
 
     public int lastFourDigits(){

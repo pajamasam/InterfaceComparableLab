@@ -40,11 +40,7 @@ public class Paypal implements Payment {
 
 
     public String getShortDescription() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("PayPal ");
-        sb.append(this.payerName + " ");
-        sb.append(this.email);
-        return sb.toString();
+        return String.format("Paypal %s %s", this.payerName, this.email);
     }
 
     public int compareTo(Payment o) {
