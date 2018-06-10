@@ -1,52 +1,70 @@
 package com.zipcoder.payment;
 
 import static org.junit.Assert.*;
+import org.junit.Before;
 import org.junit.Test;
 
 public class CheckTest {
 
+    Check ck;
+
+    @Before
+    public void before(){
+        this.ck = new Check(45, "Nicholas M", "445784", "4451884");
+    }
+
     @Test
     public void getId() {
-        //When
-        Check ck = new Check();
-        ck.setId(4456);
-
         //Expect
-        long expected = 4456;
+        long expected = 45;
 
         //Actual
         long actual =  ck.getId();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void setId(){
+        //When
+        ck.setId(50);
+
+        //Expect
+        long expect = 50;
+
+        //Actual
+        long actual = ck.getId();
+        assertEquals(expect, actual);
+    }
+
+    @Test
+    public void getPayerName() {
+        //Expect
+        String expected = "Nicholas M";
+
+        //Actual
+        String actual = ck.getPayerName();
 
         assertEquals(expected, actual);
     }
 
     @Test
-    public void getPayerName() {
+    public void setPayerName(){
         //When
-        Check ck = new Check();
-        ck.setPayerName("Nicholas");
+        ck.setPayerName("Dan Smith");
 
         //Expect
-        String expected = "Nicholas";
+        String expect = "Dan Smith";
 
         //Actual
-        String acual = ck.getPayerName();
-        assertEquals(expected, acual);
-    }
+        String actual = ck.getPayerName();
 
-    @Test
-    public void getShortDescription() {
+        assertEquals(expect, actual);
     }
-
 
     @Test
     public void getRoutingNumber() {
-        //When
-        Check ck = new Check();
-        ck.setRoutingNumber("4532353");
-
         //Expect
-        String expected = "4532353";
+        String expected = "445784";
 
         //Actual
         String actual = ck.getRoutingNumber();
@@ -57,7 +75,6 @@ public class CheckTest {
     @Test
     public void setRoutingNumber() {
         //When
-        Check ck = new Check();
         ck.setRoutingNumber("4532353");
 
         //Expect
@@ -71,7 +88,6 @@ public class CheckTest {
     @Test
     public void setAccountNumber() {
         //When
-        Check ck = new Check();
         ck.setAccountNumber("4532353");
 
         //Expect
@@ -83,41 +99,9 @@ public class CheckTest {
     }
 
     @Test
-    public void setPayerName() {
-        //When
-        Check ck = new Check();
-        ck.setPayerName("Nick M");
-
-        //Expect
-        String expected = "Nick M";
-
-        //Actual
-        String actual = ck.getPayerName();
-        assertEquals(expected,actual);
-    }
-
-    @Test
-    public void setId() {
-        //When
-        Check ck = new Check();
-        ck.setId(3423);
-
-        //Expect
-        long expected = 3423;
-
-        //Actual
-        long actual =  ck.getId();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
     public void getAccountNumber() {
-        //When
-        Check ck = new Check();
-        ck.setAccountNumber("893456");
         //Expect
-        String expected = "893456";
+        String expected = "4451884";
 
         //Actual
         String actual = ck.getAccountNumber();
@@ -127,12 +111,9 @@ public class CheckTest {
     }
 
     @Test
-    public void getShortDescription1() {
-        //When
-        Check ck = new Check(4563, "Nicholas Maidanos", "45335665", "444545");
-
+    public void getShortDescriptionTest() {
         //Expect
-        String expected = "Check Nicholas Maidanos ****4545";
+        String expected = "Check Nicholas M ****1884\n";
 
         //Actual
         String actual = ck.getShortDescription();

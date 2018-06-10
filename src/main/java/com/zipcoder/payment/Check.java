@@ -25,7 +25,7 @@ public class Check implements Payment {
     }
 
     public String getShortDescription() {
-        return String.format("Check %s ****%d", this.getPayerName(), lastFourDigits());
+        return String.format("Check %s ****%d\n", this.getPayerName(), lastFourDigits());
     }
 
     public int lastFourDigits(){

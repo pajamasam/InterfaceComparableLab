@@ -61,7 +61,7 @@ public class CreditCard implements Payment {
     }
 
     public String getShortDescription() {
-        return String.format("CC %s %d %d/%d", this.payerName, this.lastFourDigits(), this.expiredMonth, this.expiredYear);
+        return String.format("CC %s %d %d/%d\n", this.payerName, this.lastFourDigits(), this.expiredMonth, this.expiredYear);
     }
 
     public int lastFourDigits(){

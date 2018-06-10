@@ -2,18 +2,35 @@ package com.zipcoder.payment;
 
 
 import static org.junit.Assert.*;
+import org.junit.Before;
 import org.junit.Test;
 
 public class PaypalTest {
 
+    Paypal pp;
+
+    @Before
+    public void setup(){
+        this.pp = new Paypal(50, "Nicholas Maidanos", "nmaidanos@gmail.com");
+    }
+
     @Test
-    void setId() {
+    public void setId() {
         //When
-        Paypal pp = new Paypal();
-        pp.setId(75);
+        pp.setId(48);
 
         //Expect
-        long expect = 75;
+        long expect = 48;
+
+        //Actual
+        long actual = this.pp.getId();
+        assertEquals(expect, actual);
+    }
+
+    @Test
+    public void getId() {
+        //Expect
+        long expect = 50;
 
         //Actual
         long actual = pp.getId();
@@ -21,25 +38,20 @@ public class PaypalTest {
     }
 
     @Test
-    void getId() {
+    public void setPayerName() {
         //When
-        Paypal pp = new Paypal();
-        pp.setId(75);
+        pp.setPayerName("Dan Smith");
 
         //Expect
-        long expect = 75;
+        String expect = "Dan Smith";
 
         //Actual
-        long actual = pp.getId();
+        String actual = pp.getPayerName();
         assertEquals(expect, actual);
     }
 
     @Test
-    void setPayerName() {
-        //When
-        Paypal pp =  new Paypal();
-        pp.setPayerName("Nicholas Maidanos");
-
+    public void getPayerName() {
         //Expect
         String expect = "Nicholas Maidanos";
 
@@ -49,27 +61,12 @@ public class PaypalTest {
     }
 
     @Test
-    void getPayerName() {
+    public void setEmail() {
         //When
-        Paypal pp =  new Paypal();
-        pp.setPayerName("Nicholas Maidanos");
+        pp.setEmail("desk@email.com");
 
         //Expect
-        String expect = "Nicholas Maidanos";
-
-        //Actual
-        String actual = pp.getPayerName();
-        assertEquals(expect, actual);
-    }
-
-    @Test
-    void setEmail() {
-        //When
-        Paypal pp = new Paypal();
-        pp.setEmail("example@email.com");
-
-        //Expect
-        String expect = "example@email.com";
+        String expect = "desk@email.com";
 
         //Actual
         String actual = pp.getEmail();
@@ -77,13 +74,9 @@ public class PaypalTest {
     }
 
     @Test
-    void getEmail() {
-        //When
-        Paypal pp = new Paypal();
-        pp.setEmail("example@email.com");
-
+    public void getEmail() {
         //Expect
-        String expect = "example@email.com";
+        String expect = "nmaidanos@gmail.com";
 
         //Actual
         String actual = pp.getEmail();
@@ -91,12 +84,9 @@ public class PaypalTest {
     }
 
     @Test
-    void getShortDescription() {
-        //When
-        Paypal pp = new Paypal(78, "Nicholas Maidanos", "nmaidanos@gmail.com");
-
+    public void getShortDescription() {
         //Expect
-        String expect = "PayPal Nicholas Maidanos nmaidanos@gmail.com";
+        String expect = "Paypal Nicholas Maidanos nmaidanos@gmail.com\n";
 
         //Actual
         String actual = pp.getShortDescription();
@@ -105,6 +95,7 @@ public class PaypalTest {
     }
 
     @Test
-    void compareTo() {
+    public void compareTo() {
+
     }
 }
