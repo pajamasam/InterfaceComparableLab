@@ -35,12 +35,18 @@ public class PaymentPresenter {
     public void orderBy(Payment[] payments){
         switch(this.order){
             case SHORTDESCRIPTION:
-                this.bubbleSort(payments, new ShortDescription());
+                Comparator<Payment> shortnameComparatorLamda =
+                        (Payment s1, Payment s2) -> {return s1.getShortDescription().compareTo(s2.getShortDescription());};
+                this.bubbleSort(payments, shortnameComparatorLamda);
                 break;
             case PAYERNAME:
-                this.bubbleSort(payments, new Payer());
+                Comparator<Payment> paynameComparatorLamda =
+                        (Payment s1, Payment s2) -> {return s1.getPayerName().compareTo(s2.getPayerName());};
+                this.bubbleSort(payments, paynameComparatorLamda);
                 break;
             case ID:
+                Comparator<Payment> idComparatorLamda =
+                        (Payment s1, Payment s2) -> {return new Long(s1.getId()).compareTo(s2.getId());};
                 this.bubbleSort(payments, new Id());
                 break;
             default:
