@@ -1,10 +1,5 @@
 package com.zipcoder.payment;
 
-import com.zipcoder.payment.Payment;
-import com.zipcoder.Comparators.Id;
-import com.zipcoder.Comparators.Payer;
-import com.zipcoder.Comparators.PaymentOrder;
-import com.zipcoder.Comparators.ShortDescription;
 
 import java.util.Comparator;
 
@@ -47,7 +42,7 @@ public class PaymentPresenter {
             case ID:
                 Comparator<Payment> idComparatorLamda =
                         (Payment s1, Payment s2) -> {return new Long(s1.getId()).compareTo(s2.getId());};
-                this.bubbleSort(payments, new Id());
+                this.bubbleSort(payments, idComparatorLamda);
                 break;
             default:
                 break;
